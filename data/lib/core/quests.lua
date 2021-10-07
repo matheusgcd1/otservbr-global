@@ -3611,8 +3611,7 @@ if not Quests then
 					startValue = 1,
 					endValue = 2,
 					states = {
-						[1] = "Jack Fate asked you to bring him 30 woodpieces, \z
-						so he can repair his ship.",
+						[1] = "Jack Fate asked you to bring him 30 woodpieces, so he can repair his ship.",
 						[2] = "After helping Jack Fate to collect the 30 woodpieces, \z
 						Jack Fate in Liberty Bay will bring you to Goroma."
 					}

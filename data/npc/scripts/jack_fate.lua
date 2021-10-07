@@ -25,7 +25,7 @@ local function addTravelKeyword(keyword, cost, destination, text, condition)
 	end
 
 	if keyword == 'goroma' then
-		keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Never heard about a place like this.'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.AccessToGoroma) ~= 1 end)
+		keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = 'Never heard about a place like this.'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.AccessToGoroma) ~= 2 end)
 	end
 
 	local travelKeyword = keywordHandler:addKeyword({keyword}, StdModule.say, {npcHandler = npcHandler, text = text or 'Do you seek a passage to ' .. keyword:titleCase() .. ' for |TRAVELCOST|?', cost = cost, discount = 'postman'})
@@ -38,7 +38,7 @@ addTravelKeyword('venore', 180, Position(32954,32022, 6))
 addTravelKeyword('port hope', 50, Position(32527,32784, 6))
 addTravelKeyword('darashia', 200, Position(33289,32480, 6))
 addTravelKeyword('ankrahmun', 90, Position(33092,32883, 6))
-addTravelKeyword('goroma', 0, Position(32161,32558, 6), 'Ugh. You really want to go back to Goroma? I\'ll surely have to repair my ship afterwards, so I won\'t charge. Okay?')
+addTravelKeyword('goroma', 500, Position(32161,32558, 6))
 addTravelKeyword('yalahar', 275, Position(32816,31272, 6), nil, function(player) return player:getStorageValue(Storage.SearoutesAroundYalahar.LibertyBay) ~= 1 and player:getStorageValue(Storage.SearoutesAroundYalahar.TownsCounter) < 5 end)
 
 -- Thais
@@ -49,7 +49,8 @@ local travelKeyword = keywordHandler:addKeyword({'thais'}, StdModule.say, {npcHa
 	travelKeyword:addChildKeyword({'no'}, StdModule.say, {npcHandler = npcHandler, reset = true, text = 'We would like to serve you some time.'})
 
 -- Basic
-keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Edron}, {Thais}, {Venore}, {Darashia}, {Ankrahmun}, {Yalahar} or {Port Hope}?'})
+keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Edron}, {Thais}, {Venore}, {Darashia}, {Ankrahmun}, {Yalahar} or {Port Hope}?'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.AccessToGoroma) ~= 2 end)
+keywordHandler:addKeyword({'sail'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Edron}, {Thais}, {Venore}, {Darashia}, {Ankrahmun}, {Yalahar}, {Port Hope} or {Goroma}?'}, function(player) return player:getStorageValue(Storage.TheShatteredIsles.AccessToGoroma) == 2 end)
 keywordHandler:addKeyword({'passage'}, StdModule.say, {npcHandler = npcHandler, text = 'Where do you want to go? To {Edron}, {Thais}, {Venore}, {Darashia}, {Ankrahmun}, {Yalahar} or {Port Hope}?'})
 keywordHandler:addKeyword({'name'}, StdModule.say, {npcHandler = npcHandler, text = 'My name is Jack Fate from the Royal Tibia Line.'})
 keywordHandler:addKeyword({'job'}, StdModule.say, {npcHandler = npcHandler, text = 'I\'m the captain of this sailing ship.'})
