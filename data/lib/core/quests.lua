@@ -3609,9 +3609,13 @@ if not Quests then
 					storageId = Storage.TheShatteredIsles.AccessToGoroma,
 					missionId = 10276,
 					startValue = 1,
-					endValue = 1,
-					description = "After helping Jack Fate to collect the 30 woodpieces, \z
+					endValue = 2,
+					states = {
+						[1] = "Jack Fate asked you to bring him 30 woodpieces, \z
+						so he can repair his ship.",
+						[2] = "After helping Jack Fate to collect the 30 woodpieces, \z
 						Jack Fate in Liberty Bay will bring you to Goroma."
+					}
 				},
 				[4] = {
 					name = "Access to Laguna Island",
