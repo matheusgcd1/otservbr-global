@@ -391,3 +391,5 @@ config.lua.dist
 src/creatures/players/player.h
 otbr.exe.manifest
 data/scripts/actions/spellbook.lua
+data/world/otservbr-house.xml
+data/world/otservbr-spawn.xml
