@@ -11,12 +11,12 @@ function rake.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 			if  item:getPosition() then 
 				toPosition:sendMagicEffect(CONST_ME_POFF)
 				player:addItem(6093, 1)
-				player:say("You have found a ring. DO PLAYER", TALKTYPE_MONSTER_SAY)
+				player:say("You have found a ring.", TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.TheShatteredIsles.TheGovernorDaughter, 2)
 			else 
 				toPosition:sendMagicEffect(CONST_ME_POFF)
 				Game.createItem(6093, 1, Position(32422, 32770, 1))
-				player:say("You have found a ring. DO CHAO", TALKTYPE_MONSTER_SAY)
+				player:say("You have found a ring.", TALKTYPE_MONSTER_SAY)
 				player:setStorageValue(Storage.TheShatteredIsles.TheGovernorDaughter, 2)
 			end
 		end

@@ -3792,11 +3792,13 @@ if not Quests then
 					storageId = Storage.TheShatteredIsles.TheErrand,
 					missionId = 10289,
 					startValue = 1,
-					endValue = 2,
+					endValue = 4,
 					states = {
 						[1] = "You told Eleonore to run a small errand. Deliver the 200 gold pieces she \z
 						gave to the herbalist Charlotta in the south-western part of Liberty Bay.",
-						[2] = "You delivered the gold to Charlotta. Return to Eleonore and tell her the secret password: peg leg"
+						[2] = "You delivered the gold to Charlotta. Return to Eleonore and tell her the secret password: peg leg",
+						[3] = "You delivered the gold to Charlotta. Return to Eleonore and tell her the secret password: peg leg",
+						[4] = "You delivered the gold to Charlotta. Return to Eleonore and tell her the secret password: peg leg"
 					}
 				},
 				[17] = {
