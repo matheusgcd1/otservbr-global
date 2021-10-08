@@ -259,9 +259,16 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 			potion.combat:execute(target, Variant(target:getId()))
 		end
 
+		if (fromPosition.x == CONTAINER_POSITION) then 
+			if (not item:getParent():addItem(7634, 1)) then 
+				player:addItem(7634, 1) 
+			end
+		 else
+			Game.createItem(7634, 1, fromPosition)
+		 end
+
 		player:addAchievementProgress('Potion Addict', 100000)
 		target:say("Aaaah...", MESSAGE_POTION)
-		--player:addItem(potion.flask, 1)
 		player:addCondition(exhaust)
 		player:setStorageValue(38412, player:getStorageValue(38412)+1)
 	end
