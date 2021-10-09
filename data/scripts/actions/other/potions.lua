@@ -261,7 +261,7 @@ function flaskPotion.onUse(player, item, fromPosition, target, toPosition, isHot
 
 		if (fromPosition.x == CONTAINER_POSITION) then 
 			if (not item:getParent():addItem(potion.flask, 1)) then 
-				player:addItem(potion.flask, 1) 
+				player:addItem(potion.flask, 1)
 			end
 		 else
 			Game.createItem(potion.flask, 1, fromPosition)
